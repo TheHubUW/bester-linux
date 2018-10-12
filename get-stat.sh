@@ -12,6 +12,7 @@ do
   if [ "$var" != "" ]
   then
     echo "$var"
+    #SSHs into all the servers in machines.txt and cats /proc/stat
     ssh -n $USER@$var.cs.wisc.edu cat /proc/stat > $STAT_DIRECTORY/stat-$var
   fi
 done < "$input"
